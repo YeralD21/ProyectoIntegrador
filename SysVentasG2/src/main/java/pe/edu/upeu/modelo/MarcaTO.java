@@ -8,6 +8,8 @@ public class MarcaTO {
     public String idMarca="M001";
     public String nombre;
     
+    public MarcaTO(){ }
+
     public MarcaTO(String idMarca, String nombre) {
         this.idMarca = idMarca;
         this.nombre = nombre;

@@ -1,10 +1,10 @@
-package pe.edu.upeu.dao;
+package pe.edu.upeu.crud;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
-import pe.edu.upeu.utils.LeerArchivo;
+import pe.edu.upeu.util.LeerArchivo;
 
 public class AppCrud {
  

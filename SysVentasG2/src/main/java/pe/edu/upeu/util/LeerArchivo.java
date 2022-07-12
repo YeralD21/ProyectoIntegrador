@@ -1,4 +1,4 @@
-package pe.edu.upeu.utils;
+package pe.edu.upeu.util;
 
 import java.io.File;
 import java.io.IOException;
