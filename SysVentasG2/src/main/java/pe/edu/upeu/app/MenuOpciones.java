@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import pe.edu.upeu.dao.CategoriaDao;
 import pe.edu.upeu.dao.ClienteDao;
+import pe.edu.upeu.dao.DescuentoPDao;
 import pe.edu.upeu.dao.MarcaDao;
 import pe.edu.upeu.dao.ProductoDao;
 import pe.edu.upeu.dao.UsuarioDao;
@@ -42,7 +43,7 @@ public class MenuOpciones {
         menu += "3=Crear Categoria\n";
         menu += "4=Crear Marca\n";
         menu += "5=Crear Cliente\n6=Crear Producto\n7=Listar Productos\n";
-        menu +="8=Registro Ventas\n9=Reporte de Ventas";
+        menu +="8=Registro Ventas\n9=Reporte de Ventas\n10=DescuentoCantidad";
         System.out.println(menu);
         int opciones = sc.nextInt();
         do {
@@ -56,6 +57,7 @@ public class MenuOpciones {
                 case 7: new ProductoDao().reportarProductos(); break;
                 case 8: new VentaDao().registroVentaGeneral();break;
                 case 9: new VentaDao().reporteVentasRangoFecha();break;
+                case 10: new DescuentoPDao().DescuentoPrDao();break;
                 default: System.out.println("Opcion Invalida!"); break;
             }
             String continuar=leerT.leer("",

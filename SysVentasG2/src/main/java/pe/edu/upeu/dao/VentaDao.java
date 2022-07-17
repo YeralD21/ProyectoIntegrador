@@ -7,6 +7,7 @@ import org.fusesource.jansi.Ansi;
 import org.fusesource.jansi.AnsiConsole;
 
 import pe.edu.upeu.crud.AppCrud;
+import pe.edu.upeu.modelo.DescuentosTO;
 import pe.edu.upeu.modelo.ProductoTO;
 import pe.edu.upeu.modelo.VentaDetalleTO;
 import pe.edu.upeu.modelo.VentaTO;
@@ -25,6 +26,7 @@ public class VentaDao extends AppCrud{
     final static String TABLA_PRODUCTO="Producto.txt";
     final static String TABLA_VENTA="Venta.txt";
     final static String TABLA_VENTADETALLE="VentaDetalle.txt";
+    final static String TABLA_DESCUENTO="DESCUENTO.txt";
 
     SimpleDateFormat formatoFechaHora = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
     SimpleDateFormat formatoFecha = new SimpleDateFormat("dd-MM-yyyy");
@@ -70,6 +72,11 @@ public class VentaDao extends AppCrud{
         }
         return null;
     }
+
+   
+
+        
+    
 
     public VentaDetalleTO carritoVentas(VentaTO to) {
         System.out.println();
@@ -155,7 +162,7 @@ public class VentaDao extends AppCrud{
                 }
             }
 
-            //Pasar los datos a un Vetor de tipo VentaTO segun Rango Fechas
+            //Pasar los datos a un Vector de tipo VentaTO segun Rango Fechas
             VentaTO[] dataReal=new VentaTO[contadorVRD];
             int indiceVector=0;
             for (int i = 0; i < dataV.length; i++) {
@@ -183,7 +190,7 @@ public class VentaDao extends AppCrud{
             AnsiConsole.systemInstall();
             color=new Ansi();
             System.out.println(color.bgBrightYellow().fgBlack()
-            .a("===========Reporte Ventas entre "+fechaInit+" Y "+fechaFinal+"============").reset());
+            .a    ("      ===========Reporte Ventas entre "+fechaInit+" Y "+fechaFinal+"============").reset());
             
             util.pintarLine('H', 40);
             util.pintarTextHeadBody('H', 3, "ID,DNI,Fecha, Sub. Total, IGV, Imp.Total");
