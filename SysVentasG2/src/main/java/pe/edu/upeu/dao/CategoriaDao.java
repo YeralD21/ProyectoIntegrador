@@ -22,4 +22,33 @@ public class CategoriaDao extends AppCrud {
       leerA=new LeerArchivo(TABLA_CATEGORIA);
       agregarContenido(leerA, cTo);
     }
+
+    public void listarCategoria() {
+      leerA=new LeerArchivo(TABLA_CATEGORIA);
+      Object[][] dataC=listarContenido(leerA);
+      System.out.println("Id/Cat\tNombre Categoria");
+      for (int i = 0; i < dataC.length; i++) {
+        System.out.println(dataC[1][0]+"\t"+dataC[i][1]);
+        
+      }
+    }
+  
+    public void modificarCategoria() {
+      leerA=new LeerArchivo(TABLA_CATEGORIA);
+      CategoriaTO ca=new CategoriaTO();
+
+      String idC=leerT.leer("", "Ingrese Id Categoria a Modificar");
+      ca.setNombre(leerT.leer("", "Ingrese nuevo nombre Categoria"));
+
+      editarRegistro(leerA, 0, idC, ca);
+      
+    }
+
+    public void eliminarCategoria() {
+      leerA=new LeerArchivo(TABLA_CATEGORIA);
+      String idC=leerT.leer("", "Ingrese Id Categoria a Eliminar(C1,C2...)");
+      eliminarRegistros(leerA, 0, idC);
+    }
+
+
 }

@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import pe.edu.upeu.dao.CategoriaDao;
 import pe.edu.upeu.dao.ClienteDao;
-import pe.edu.upeu.dao.DescuentoPDao;
+
 import pe.edu.upeu.dao.MarcaDao;
 import pe.edu.upeu.dao.ProductoDao;
 import pe.edu.upeu.dao.UsuarioDao;
@@ -40,24 +40,30 @@ public class MenuOpciones {
         String menu = "";
         menu += "1=Registro de Usuario\n";
         menu += "2=Listar Usuarios\n";
-        menu += "3=Crear Categoria\n";
-        menu += "4=Crear Marca\n";
-        menu += "5=Crear Cliente\n6=Crear Producto\n7=Listar Productos\n";
-        menu +="8=Registro Ventas\n9=Reporte de Ventas\n10=DescuentoCantidad";
+        menu += "3=Crear Categoria\n4=Listar Categoria\n"+"5=Editar Categoria\n6=Elminar Categoria\n";
+        menu += "7=Crear Marca\n8=Listar Marca\n"+"9=Editar Marca\n10=Eleminar Marca";
+        menu += "11=Crear Cliente\n12=Crear Producto\n13=Listar Productos\n";
+        menu +="14=Registro Ventas\n15=Reporte de Ventas\n16=DescuentoCantidad";
         System.out.println(menu);
         int opciones = sc.nextInt();
         do {
             switch (opciones) {
                 case 1: new UsuarioDao().crearUsuarios();   break;
                 case 2: new UsuarioDao().listarUsuarios();   break;
-                case 3: new CategoriaDao().crearCategoria();  break;
-                case 4: new MarcaDao().crearMarca(); break;
-                case 5: new ClienteDao().crearCliente(); break;
-                case 6: new ProductoDao().crearProducto(); break;
-                case 7: new ProductoDao().reportarProductos(); break;
-                case 8: new VentaDao().registroVentaGeneral();break;
-                case 9: new VentaDao().reporteVentasRangoFecha();break;
-                case 10: new DescuentoPDao().DescuentoPrDao();break;
+                case 3: new CategoriaDao().crearCategoria(); break;
+                case 4: new CategoriaDao().listarCategoria(); break;
+                case 5: new CategoriaDao().modificarCategoria();     break;
+                case 6: new CategoriaDao().eliminarCategoria();     break;
+                case 7: new MarcaDao().crearMarca(); break;
+                case 8: new MarcaDao().listarMarca();     break;
+                case 9: new MarcaDao().modificarMarca();    break;
+                case 10: new MarcaDao().eliminarMarca();     break;
+                case 11: new ClienteDao().crearCliente(); break;
+                case 12: new ProductoDao().crearProducto(); break;
+                case 13: new ProductoDao().reportarProductos(); break;
+                case 14: new VentaDao().registroVentaGeneral();break;
+                case 15: new VentaDao().reporteVentasRangoFecha();break;
+                
                 default: System.out.println("Opcion Invalida!"); break;
             }
             String continuar=leerT.leer("",
@@ -67,5 +73,7 @@ public class MenuOpciones {
             }else{opciones=0;}
         } while (opciones != 0);
     }
+
+
 
 }
